@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de medidas</title>
+    <style>
+      body {
+        font-size: normal 18pt Arial;
+      }
+
+      h1 {
+        margin-bottom: 30px;
+      }
+
+      div {
+        padding: 20px;
+        margin: 10px;
+        background-color: rgb(245, 241, 241);
+        box-shadow: -0px 1px 3px 1px rgb(155, 153, 153);
+        display: inline;
+      }
+
+      div:hover {
+        background-color: rgb(155, 153, 153);
+        cursor: pointer;
+      }
+
+      p {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calculando troco</h1>
+    <div id="conversorMetros" onclick="conversor()">Converter</div>
+    <p id="res">Clique no botâo acima para iniciar.</p>
+  </body>
+  <script>
+    function conversor() {
+      let conversorMetros = Number(
+        prompt("Digite uma distância em metros (m)")
+      );
+      let iniciar = window.document.querySelector("#res");
+
+      let km = (conversorMetros / 1000).toFixed(3);
+      let hm = (conversorMetros / 100).toFixed(3);
+      let dam = (conversorMetros / 10).toFixed(3);
+      let dm = (conversorMetros * 10).toFixed(3);
+      let cm = (conversorMetros * 100).toFixed(3);
+      let mm = (conversorMetros * 1000).toFixed(3);
+
+      iniciar.innerHTML = `<strong>A distância de ${conversorMetros} metros, corresponde a...</strong> <br>
+       ${km} quilômetros (Km)<br>
+       ${hm} hectömetros (Hm)<br> 
+       ${dam} decâmetros (Dam)<br> 
+       ${dm} decímetros (dm)<br> 
+       ${cm} centímetros (cm)<br> 
+       ${mm} milímetros (mm)`;
+    }
+  </script>
+</html>

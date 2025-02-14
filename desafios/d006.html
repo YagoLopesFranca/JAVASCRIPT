@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de Temperaturas</title>
+    <style>
+      body {
+        font-size: normal 18pt Arial;
+      }
+
+      h1 {
+        margin-bottom: 30px;
+      }
+
+      div {
+        padding: 20px;
+        margin: 10px;
+        background-color: rgb(245, 241, 241);
+        box-shadow: -0px 1px 3px 1px rgb(155, 153, 153);
+        display: inline;
+      }
+
+      div:hover {
+        background-color: rgb(155, 153, 153);
+        cursor: pointer;
+      }
+
+      p {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Conversor de Temperaturas</h1>
+    <div id="conTemp" onclick="conversor()">Converter</div>
+    <p id="res">Clique no botâo acima para iniciar.</p>
+  </body>
+  <script>
+    function conversor() {
+      let botCon = window.document.getElementById("contemp");
+      let res = window.document.getElementById("res");
+      let conTemp = Number(prompt("Digite uma temperatura em °C (Celsius)"));
+      let k = conTemp + 273.15;
+      let f = (conTemp * 9) / 5 + 32;
+      res.innerHTML = `
+      <strong>A temperatura de ${conTemp}°C, corresponde a...</strong> <br> \n${k.toFixed(
+        2
+      )}°K (Kelvin)<br> \n${f.toFixed(2)}°F (Fahrenheit)
+      `;
+    }
+  </script>
+</html>

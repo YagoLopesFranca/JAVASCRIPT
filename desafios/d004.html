@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcula Troco</title>
+    <style>
+      body {
+        font-size: normal 18pt Arial;
+      }
+
+      h1 {
+        margin-bottom: 30px;
+      }
+
+      div {
+        padding: 20px;
+        margin: 10px;
+        background-color: rgb(245, 241, 241);
+        box-shadow: -0px 1px 3px 1px rgb(155, 153, 153);
+        display: inline;
+      }
+
+      div:hover {
+        background-color: rgb(155, 153, 153);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calculando troco</h1>
+    <div id="comp" onclick="calcular()">Comprar produto</div>
+  </body>
+  <script>
+    function calcular() {
+      let comprarP = window.document.querySelector("#comp");
+      let nomeProduto = prompt("Que produto você está comprando?");
+      let valorProduto = Number(
+        prompt(`Quanto custa ${nomeProduto} que você está comprando?`)
+      );
+      let qtdDinPago = Number(
+        prompt(`Qual foi valor que você deu para pagar ${nomeProduto}?`)
+      );
+
+      let somaDin = qtdDinPago - valorProduto;
+
+      let confirCompra = confirm(
+        `Você comprou ${nomeProduto} que custou ${valorProduto}.\nDeu ${qtdDinPago} em dinheiro e vai receber ${somaDin} de troco. \nVolte sempre!`
+      );
+
+      // let valorProdutoFormatado = valorProduto.toLocaleString("pt-BR", {
+      //   style: "currency",
+      //   currency: "BRL",
+      // });
+      // let qtdDinPagoFormatado = qtdDinPago.toLocaleString("pt-BR", {
+      //   style: "currency",
+      //   currency: "BRL",
+      // });
+      // let somaDinFormatado = somaDin.toLocaleString("pt-BR", {
+      //   style: "currency",
+      //   currency: "BRL",
+      // });
+    }
+  </script>
+</html>

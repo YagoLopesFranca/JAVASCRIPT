@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste</title>
+  </head>
+  <body>
+    <h1>Fomulario de perguntas</h1>
+    Qual seu País? <input type="text" name="txt" id="txt" />
+    <input type="button" value="verificar" onclick="verificarPais()" />
+    <div id="res"></div>
+  </body>
+  <script>
+    function verificarPais() {
+      let txtP = window.document.querySelector("input#txt");
+      let res = window.document.querySelector("div#res");
+      let btnV = txtP.value.trim(); //  a condição compara btnV, que contém o valor do campo de texto, com "Brasil"
+      if (btnV === "Brasil") {
+        res.innerHTML = "Sua naturaridade é <strong>brasileira</strong>";
+      } else {
+        res.innerHTML = "Seja bem vinda!";
+        res.innerHTML += "Você é <strong>estrangeira</strong>";
+      }
+    }
+  </script>
+</html>

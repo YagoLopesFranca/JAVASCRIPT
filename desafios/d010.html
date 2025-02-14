@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de Temperaturas</title>
+    <style>
+      body {
+        font-size: normal 18pt Arial;
+      }
+
+      h1 {
+        margin-bottom: 30px;
+      }
+
+      div {
+        padding: 20px;
+        margin: 10px;
+        background-color: rgb(245, 241, 241);
+        box-shadow: -0px 1px 3px 1px rgb(155, 153, 153);
+        display: inline;
+      }
+
+      div:hover {
+        background-color: rgb(155, 153, 153);
+        cursor: pointer;
+      }
+
+      p {
+        margin-top: 40px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Resolvendo Bhaskara</h1>
+    <div onclick="calculoDelta()">Calcular</div>
+    <p id="res">
+      <strong>
+        Considerando uma equação no formato ax&sup2; + bx + c = 0, aperte o
+        botão acima para calcular o valor de &Delta;.
+      </strong>
+    </p>
+  </body>
+  <script>
+    function calculoDelta() {
+      let valorA = Number(prompt("Qual valor é o valor de a?"));
+      let valorB = Number(prompt("Qual valor de b?"));
+      let valorC = Number(prompt("Qual valor de C?"));
+
+      let calDelta = Math.pow(valorB, 2) - 4 * valorA * valorC;
+
+      let res = window.document.getElementById("res");
+      res.innerHTML = `
+      <h1>Resolvendo bhaskara</h1>
+      <p>A equação atual é ${valorA}x&sup2; + ${valorB}x + ${valorC} = 0</p>
+      <p>O calculo realizado será &Delta; = ${valorB}² - 4.${valorA}.${valorC}</p>
+      <p>O valor calculado foi &Delta; = ${calDelta}</p>
+      `;
+    }
+  </script>
+</html>

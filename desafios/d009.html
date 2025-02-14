@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de Temperaturas</title>
+    <style>
+      body {
+        font-size: normal 18pt Arial;
+      }
+
+      h1 {
+        margin-bottom: 30px;
+      }
+
+      div {
+        padding: 20px;
+        margin: 10px;
+        background-color: rgb(245, 241, 241);
+        box-shadow: -0px 1px 3px 1px rgb(155, 153, 153);
+        display: inline;
+      }
+
+      div:hover {
+        background-color: rgb(155, 153, 153);
+        cursor: pointer;
+      }
+
+      p {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Reajuste Salarial</h1>
+    <div onclick="verificar()">Reajuste Salárial</div>
+    <p id="res">Clique no botâo acima para iniciar.</p>
+  </body>
+  <script>
+    function verificar() {
+      let nome = prompt("Qual é o nome do Funcionário?");
+
+      let salario = Number(prompt(`Qual salário de ${nome}`));
+
+      let porcentagem = Number(
+        prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`)
+      );
+
+      let reajusteSal = salario * porcentagem;
+      let ganhoMes = salario + reajusteSal;
+
+      let res = document.getElementById("res");
+      res.innerHTML = `<strong><h1>${nome} recebeu um aumento salaria!</h1></strong> <br>
+      O salário atual era R$ ${salario} <br>
+      Com um aumento de ${porcentagem}%, o salário vai aumentar R$ ${reajusteSal.toFixed(
+        2
+      )} no próximo mês. <br>
+      E a partir daì, Pedro Paulo vai passar a ganhar R$ ${ganhoMes.toFixed(2)}
+      `;
+    }
+  </script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de Temperaturas</title>
+    <style>
+      body {
+        font-size: normal 18pt Arial;
+      }
+
+      h1 {
+        margin-bottom: 30px;
+      }
+
+      div {
+        padding: 20px;
+        margin: 10px;
+        background-color: rgb(245, 241, 241);
+        box-shadow: -0px 1px 3px 1px rgb(155, 153, 153);
+        display: inline;
+      }
+
+      div:hover {
+        background-color: rgb(155, 153, 153);
+        cursor: pointer;
+      }
+
+      p {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calcular Desconto</h1>
+    <div onclick="calcularDesconto()">Desconto de 10%</div>
+    <p id="res">Clique no botâo acima para iniciar.</p>
+  </body>
+  <script>
+    function calcularDesconto() {
+      let nomeProduto = prompt("Qual é o produto que você está comprando?");
+
+      let precoProduto = Number(prompt(`Qual é o preço de ${nomeProduto}`));
+
+      let desconto = precoProduto * 0.1;
+      let precoFinal = precoProduto - desconto;
+
+      let res = window.document.getElementById("res");
+      res.innerHTML = `<h1><strong>Calculando desconto de 10% para ${nomeProduto} <br></strong></h1>
+      <p>O preço original era R$ ${precoProduto.toFixed(2)}. <br></p>
+      <p>Você acaba de ganhar R$ ${desconto.toFixed(
+        2
+      )} de desconto (-10%). <br></p>
+      <p>
+        No fim, você vai pagar R$ ${precoFinal.toFixed(
+          2
+        )} no produto ${nomeProduto}.
+      </p> 
+      `;
+    }
+  </script>
+</html>

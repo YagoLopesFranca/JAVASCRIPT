@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio de boas-vindas!</title>
+    <style>
+      body {
+        font-size: normal 18pt Arial;
+      }
+
+      h1 {
+        margin-bottom: 30px;
+      }
+
+      div {
+        padding: 20px;
+        margin: 10px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: inset 1px 2px 3px 1px rgb(155, 153, 153);
+        display: inline;
+      }
+
+      div:hover {
+        background-color: rgb(155, 153, 153);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Boas-vindas!</h1>
+    <div id="des" onclick="iniciarDesafio()">Inicie o desafio</div>
+  </body>
+  <script>
+    function iniciarDesafio() {
+      let boasV = window.document.querySelector("#des");
+      let nome = prompt("Qual è o seu nome?");
+      let idade = Number(prompt(`Olá, ${nome}! Quantos anos você tem?`));
+      let saudacao = confirm(
+        `Acabei de conhecer ${nome}, quem tem ${idade} anos de idade!`
+      );
+    }
+  </script>
+</html>
